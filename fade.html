@@ -1,0 +1,55 @@
+<html>
+    
+    <head>
+        <title>Fade</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+    </head>
+    
+    <body style="background-color:black;">
+        <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+            <li>Four</li>
+            <li>Five</li>
+            <li>Six</li>
+            <li>Seven</li>
+            <li>Eight</li>
+            <li>Nine</li>
+            <li>Ten</li>
+        </ul>
+        <script>
+            $(function() {
+                var fade = function(node) {
+                    var level = 1;
+                    var step = function() {
+                        var hex = level.toString(16);
+                        node.style.backgroundColor = '#' + hex + hex + hex;
+                        if (level < 15) {
+                            level += 1;
+                            setTimeout(step, 100);
+                        }
+                    };
+                    setTimeout(step, 1000);
+                };
+
+                fade(document.body);
+                
+
+                // The right way to bind functions in a loop.
+                var helper = function(i) {
+                    return function(e) {
+                        alert(i);
+                    };
+                };
+                
+                var nodes = $('li');
+                var i;
+                for(i = 0; i < nodes.length; i += 1) {
+                    nodes[i].onclick = helper(i + 1);
+                }
+            });
+        </script>
+    </body>
+
+</html>
