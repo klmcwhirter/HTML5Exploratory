@@ -1,0 +1,214 @@
+<!doctype html>
+<!-- HTML5 Boilerplate -->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<meta http-equiv="cleartype" content="on">
+
+	<!-- Responsive and mobile friendly stuff -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>POC 3 - Portlets</title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/html5reset.css" media="all">
+	<link rel="stylesheet" href="css/col.css" media="all">
+	<!--<link rel="stylesheet" href="css/2cols.css" media="all">-->
+	<!--<link rel="stylesheet" href="css/3cols.css" media="all">-->
+	<!--<link rel="stylesheet" href="css/4cols.css" media="all">-->
+	<!--<link rel="stylesheet" href="css/5cols.css" media="all">-->
+	<!--<link rel="stylesheet" href="css/6cols.css" media="all">-->
+	<!--<link rel="stylesheet" href="css/7cols.css" media="all">-->
+	<!--<link rel="stylesheet" href="css/8cols.css" media="all">-->
+	<!--<link rel="stylesheet" href="css/9cols.css" media="all">-->
+	<!--<link rel="stylesheet" href="css/10cols.css" media="all">-->
+	<!--<link rel="stylesheet" href="css/11cols.css" media="all">-->
+	<link rel="stylesheet" href="css/12cols.css" media="all">
+
+	<!-- Responsive Stylesheets -->
+	<link rel="stylesheet" media="only screen and (max-width: 1024px) and (min-width: 769px)" href="css/1024.css">
+	<link rel="stylesheet" media="only screen and (max-width: 768px) and (min-width: 481px)" href="css/768.css">
+	<link rel="stylesheet" media="only screen and (max-width: 480px)" href="css/480.css">
+
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/redmond/jquery-ui.css">
+
+	<link rel="stylesheet" href="css/third.css" media="all">
+
+	<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements and feature detects -->
+	<script src="js/modernizr-2.5.3-min.js"></script>
+</head>
+
+<body>
+<div class="section group">
+  <div class="col span_11_of_12">
+    <header class="ui-widget-header ui-corner-all">
+      <h1>&nbsp;POC - Portlets</h1>
+    </header>
+  </div>
+</div>
+
+<div class="section group">
+  <div class="col span_5_of_12">
+    <p>
+      <textarea id="ordered-list1" class="ui-corner-all" placeholder="This will contain the ordered list of portlets." disabled rows="5" cols="60"></textarea>
+    </p>
+    <br/>
+
+    <ol id="sortable1">
+
+      <li class="portlet" id="news">
+        <div class="portlet-header">News</div>
+        <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+      </li>
+
+      <li class="portlet" id="weather">
+        <div class="portlet-header">Weather</div>
+        <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+      </li>
+
+      <li class="portlet" id="feeds">
+        <div class="portlet-header">Feeds</div>
+        <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+      </li>
+
+      <li class="portlet" id="images">
+        <div class="portlet-header">Images</div>
+        <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+      </li>
+
+      <li class="portlet" id="links">
+        <div class="portlet-header">Links</div>
+        <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+      </li>
+
+    </ol>
+  </div>
+
+  <div class="col span_7_of_12">
+
+    <p>
+      <textarea id="ordered-list2" class="ui-corner-all" placeholder="This will contain the ordered list of portlets." disabled rows="5" cols="60"></textarea>
+    </p>
+    <br/>
+
+    <ol id="sortable2">
+
+      <li class="portlet-two-column" id="aapl-chart">
+        <div class="portlet-header">AAPL Chart</div>
+        <div class="portlet-content">
+          <img src="//chart.finance.yahoo.com/z?s=AAPL&t=6m&q=l&l=on&z=s&p=m50,m200" />
+        </div>
+      </li>
+
+      <li class="portlet-two-column" id="goog-chart">
+        <div class="portlet-header">GOOG Chart</div>
+        <div class="portlet-content">
+          <img src="//chart.finance.yahoo.com/z?s=GOOG&t=6m&q=l&l=on&z=s&p=m50,m200" />
+        </div>
+      </li>
+
+      <li class="portlet-two-column" id="msft-chart">
+        <div class="portlet-header">MSFT Chart</div>
+        <div class="portlet-content">
+          <img src="//chart.finance.yahoo.com/z?s=MSFT&t=6m&q=l&l=on&z=s&p=m50,m200" />
+        </div>
+      </li>
+
+      <li class="portlet-two-column" id="fin-news">
+        <div class="portlet-header">News</div>
+        <div class="portlet-content"><span id="fnews "></span>
+        </div>
+      </li>
+
+      <li class="portlet-two-column" id="shopping">
+        <div class="portlet-header">Shopping</div>
+        <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+      </li>
+
+    </ol>
+
+  </div>
+
+</div>
+<footer>
+  <div class="section group">
+    <div class="col span_4_of_12">
+      <header>What is this?</header>
+      <article>
+        <p>This is a POC of a Portlet concept reminiscent of Java Portlets. It is a responsive, interactive concept allowing components to be reordered.</p>
+      </article>
+
+      <header>What are the textareas at the top?</header>
+      <article>
+        <p>The textareas at the top of each column represent the message sent back to the server to persist the order of the portlets.</p>
+        <br />
+        <p>As the portlets are dragged and reordered the textarea for the appropriate column is updated with the current portlet order.</p>
+        <br />
+        <p><em>This portlet ordering would be sent to the server as a personalization message when the drag operation is completed.</em></p>
+      </article>
+    </div>
+    <div class="col span_8_of_12">
+      <header>How do I interact with the portlets?</header>
+      <article>
+        <p>As implemented right now the following features are available. Note that in the final implementation not all of them may be present
+        They seem to clash and do not really play nice with each other from a user experience standpoint.</p>
+        <br/>
+        <p>Note these features work on iOS as well (at least in part - Hide / Show is difficult to operate on an iPhone). Try the iOS device in both portrait and landscape orientations.
+        </p>
+        <br/>
+
+        <p><b>Drag the portlets using the header</b> - click (or touch) on the header of a portlet and drag it before or after another portlet in the same column to change the order in which that portlet appears in the list.</p>
+        <br/>
+
+        <p><b>Columns of portlets</b> - the columns represent groupings of portlets of different sizes. Some portlets may require more screen real estate than others. This feature allows for that. Notice that a portlet of one size cannot be dragged into a
+          column with portlets of a different size.
+        </p>
+        <br/>
+        <p><b>Show / Hide</b> - click (or touch) on the - / + icons to hide or show the content for that portlet respectively. Notice that while hidden a portlet can still be moved.
+        </p>
+        <br/>
+
+        <p><b>Mouse Cursor</b> - as you hover over the portlet header, the show/hide icon or the resize handle the mouse cursor changes to indicate the action that can be taken. Note that on a touch device there really is no such thing as hover so the visual
+          cue is not available there.
+        </p>
+        <br/>
+
+        <p><b>Resize</b> - drag the handle in the lower right corner of a portlet (or right side or bottom edges) to resize it. This is not a great feature and creates lots of problems for a production worthy implementation. Note that after resize a hide
+          / show operation currently causes the width to be maintained but not the height.
+        </p>
+        <br/>
+        <p><b>Refresh</b> - simply refresh the page to reset to the default rendering</p>
+
+      </article>
+    </div>
+  </div>
+</footer>
+ 
+	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>');</script>
+	
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+  
+  <script src="js/jquery.ui.touch-punch.min.js"></script>
+  <script src="js/jquery.rss.js"></script>
+
+	<!--[if (lt IE 9) & (!IEMobile)]>
+	<script src="js/selectivizr-min.js"></script>
+	<![endif]-->
+
+
+	<!-- More Scripts-->
+  <script src="js/third.js"></script>
+
+</body>
+</html>

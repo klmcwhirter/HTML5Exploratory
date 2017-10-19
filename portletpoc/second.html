@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>POC 2 - Portlets</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/redmond/jquery-ui.css">
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+  <script src="jquery.ui.touch-punch.min.js"></script>
+  <script src="jquery.rss.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body {
+    min-width: 100%; /*520px;*/
+    background: url(bg.jpg) center 0 repeat-y;
+    width: 100%;
+  }
+  body>header {
+    margin-left: 1em;
+    margin-top: 1em;
+    width: 85%;
+  }
+  #ordered-list {
+    margin-left: 1.3em;
+    height: 5em;
+    width: 75%;
+  }
+
+  #sortable {
+    font-size: 8pt;
+    list-style-type: none;
+    padding-left: 1em;
+  }
+
+  .portlet {
+    width: 160px;
+    float: left;
+    margin: 0 1em 1em 0;
+    padding: 0.3em;
+  }
+
+  .portlet-two-column {
+    width: 350px;
+    float: left;
+    margin: 0 1em 1em 0;
+    padding: 0.3em;
+  }
+
+  .portlet-header {
+    padding: 0.2em 0.3em;
+    margin-bottom: 0.5em;
+    position: relative;
+  }
+  .portlet-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -8px;
+  }
+  .portlet-content {
+    padding: 0.4em;
+  }
+  .portlet-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 50px;
+  }
+  </style>
+  <script>
+  function updateOrderedList() {
+    var listOfIds = $("#sortable").sortable("toArray");
+    //alert(listOfIds);
+    $("#ordered-list").val(listOfIds);
+  }
+  $(function() {
+    $( "#sortable" ).sortable({
+      connectWith: "#sortable",
+      handle: ".portlet-header",
+      cancel: ".portlet-toggle",
+      //placeholder: "portlet-placeholder ui-corner-all",
+      update: updateOrderedList
+    });
+
+    $( ".portlet,*.portlet-two-column" )
+      .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
+      .find( ".portlet-header" )
+        .addClass( "ui-widget-header ui-corner-all" )
+        .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>")
+        .disableSelection();
+
+    $( ".portlet-toggle" ).click(function() {
+      var icon = $( this );
+      icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
+      var portlet = icon.closest( ".portlet,*.portlet-two-column" );
+      portlet.find( ".portlet-content" ).toggle();
+      portlet.css("height", "auto");
+    });
+
+    $( ".portlet,*.portlet-two-column" )
+      .resizable({
+        stop: function(event, ui) {
+          //alert(ui.size.width + ", " + ui.size.height);
+        }
+      });
+
+      //$("#feeds").css({"width": "172px", "height": "268px"});
+
+    updateOrderedList();
+    
+    $("#fnews").rss("http://feeds.finance.yahoo.com/rss/2.0/headline?s=aapl,goog,msft&region=US&lang=en-US", {
+    limit: 7,
+    layoutTemplate: '<dl class="dl-horizontal">{entries}</dl>',
+    entryTemplate: '<dt><a href="{url}">{title}</a></dt><dd>{shortBodyPlain}[{author}@{date}]</dd>',
+    //ssl: true
+}).show();
+  });
+  </script>
+</head>
+
+<body>
+ <header class="ui-widget-header ui-corner-all">
+   <h1>&nbsp;POC - Portlets</h1>
+ </header>
+
+<p>
+<textarea id="ordered-list" class="ui-corner-all" placeholder="This will contain the ordered list of portlets." rows="5" cols="60"></textarea>
+</p>
+
+<ul id="sortable">
+  <li class="portlet" id="news">
+    <div class="portlet-header">News</div>
+    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+  </li>
+
+  <li class="portlet" id="weather">
+    <div class="portlet-header">Weather</div>
+    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+  </li>
+ 
+  <li class="portlet-two-column" id="aapl-chart">
+    <div class="portlet-header">AAPL Chart</div>
+    <div class="portlet-content"><img src="//chart.finance.yahoo.com/z?s=AAPL&t=6m&q=l&l=on&z=s&p=m50,m200"/></div>
+  </li>
+
+ 
+  <li class="portlet-two-column" id="goog-chart">
+    <div class="portlet-header">GOOG Chart</div>
+    <div class="portlet-content"><img src="//chart.finance.yahoo.com/z?s=GOOG&t=6m&q=l&l=on&z=s&p=m50,m200"/></div>
+  </li>
+
+ 
+  <li class="portlet-two-column" id="msft-chart">
+    <div class="portlet-header">MSFT Chart</div>
+    <div class="portlet-content"><img src="//chart.finance.yahoo.com/z?s=MSFT&t=6m&q=l&l=on&z=s&p=m50,m200"/></div>
+  </li>
+
+  <li class="portlet-two-column" id="fin-news">
+    <div class="portlet-header">News</div>
+    <div class="portlet-content"><span id="fnews"></span></div>
+  </li>
+
+
+  <li class="portlet" id="feeds">
+    <div class="portlet-header">Feeds</div>
+    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+  </li>
+ 
+  <li class="portlet" id="images">
+    <div class="portlet-header">Images</div>
+    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+  </li>
+
+  <li class="portlet-two-column" id="shopping">
+    <div class="portlet-header">Shopping</div>
+    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+  </li>
+
+  <li class="portlet" id="links">
+    <div class="portlet-header">Links</div>
+    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+  </li>
+ 
+</ul>
+ 
+ 
+</body>
+</html>

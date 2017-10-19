@@ -1,0 +1,91 @@
+body {
+    min-width: 100%;
+    /*520px;*/
+    background: url(../bg.jpg) center 0 repeat-y;
+    width: 100%;
+}
+body header {
+    /*margin-left: 1em;*/
+    /*margin-top: 1em;*/
+    padding: 1em;
+    /*width: 98%;*/
+}
+.col {
+    margin-left: 0.7%;
+    padding-top: 0.5em;
+}
+footer .section {
+    background: rgba(200,200,255, 0.7);
+    font-size: smaller;
+    margin-left: 1em;
+    /*margin-right: 1em;*/
+    padding: 0 1em 3em 1em;
+}
+footer .col {
+    background: rgba(200,201,255, 0.7);
+}
+footer .col header {
+    font-size: larger;
+    font-weight: bold;
+    margin-left: 1em;
+    padding-left: 0;
+    padding-right: 1em;
+}
+footer .col article {
+    padding: 1em;
+}
+footer .col:first-child {
+    margin-left: 0;
+}
+#ordered-list1,#ordered-list2 {
+    font-size: 8pt;
+    margin-left: 1em;
+    height: 3em;
+    width: 95%;
+}
+#sortable1,#sortable2 {
+    font-size: 8pt;
+    list-style-type: none;
+    padding-left: 1em;
+}
+.portlet {
+    width: 160px;
+    float: left;
+    margin: 0 1em 1em 0;
+    padding: 0.3em;
+}
+.portlet-two-column {
+    width: 300px;
+    float: left;
+    margin: 0 1em 1em 0;
+    padding: 0.3em;
+}
+.portlet-two-column img {
+    max-height:100%;
+    max-width:100%;
+}
+.portlet-toggle:hover {
+    cursor: pointer;
+}
+.portlet-header {
+    padding: 0.2em 0.3em;
+    margin-bottom: 0.5em;
+    position: relative;
+}
+.portlet-header:hover {
+    cursor: move;
+}
+.portlet-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -8px;
+}
+.portlet-content {
+    padding: 0.4em;
+}
+.portlet-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 50px;
+}
